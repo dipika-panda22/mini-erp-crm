@@ -6,9 +6,9 @@ The application provides role-based authentication, customer CRM, product and in
 
 ---
 
-## Features
+# Features
 
-### Authentication & Role-Based Access
+## Authentication & Role-Based Access
 
 - JWT-based authentication
 - Secure password hashing with bcrypt
@@ -22,7 +22,7 @@ The application provides role-based authentication, customer CRM, product and in
 - Backend authorization middleware
 - Protected REST APIs
 
-### Customer CRM
+## Customer CRM
 
 - Add customers
 - Edit customers
@@ -37,7 +37,7 @@ The application provides role-based authentication, customer CRM, product and in
   - Wholesale
   - Distributor
 
-### Product & Inventory
+## Product & Inventory
 
 - Add products
 - Edit products
@@ -53,7 +53,7 @@ The application provides role-based authentication, customer CRM, product and in
 - Movement creator
 - Movement timestamp
 
-### Sales Challans
+## Sales Challans
 
 - Create sales challans
 - Select customer
@@ -70,7 +70,7 @@ The application provides role-based authentication, customer CRM, product and in
 - No-negative-stock protection
 - Cancellation without stock deduction
 
-### Dashboard
+## Dashboard
 
 The dashboard displays live information based on the logged-in user's role.
 
@@ -97,7 +97,7 @@ Examples include:
 - JWT
 - bcryptjs
 - Zod
-- Axios-compatible REST API consumption
+- REST API
 
 ## Frontend
 
@@ -117,39 +117,35 @@ Examples include:
 
 # Project Architecture
 
-The project is organized into separate frontend and backend applications.
+The application follows a separated frontend-backend architecture.
 
 ```text
-mini-erp-crm/
-│
-├── backend/
-│   ├── src/
-│   │   ├── config/
-│   │   ├── controllers/
-│   │   ├── middleware/
-│   │   ├── routes/
-│   │   ├── utils/
-│   │   └── server.ts
-│   │
-│   ├── .env.example
-│   ├── package.json
-│   └── tsconfig.json
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── context/
-│   │   ├── lib/
-│   │   ├── pages/
-│   │   ├── types/
-│   │   ├── App.tsx
-│   │   └── main.tsx
-│   │
-│   ├── .env.example
-│   ├── package.json
-│   └── vite.config.ts
-│
-├── database/
-│   └── schema.sql
-│
-└── README.md
+                         MINI ERP + CRM
+                              |
+             +----------------+----------------+
+             |                                 |
+             v                                 v
+       React Frontend                     Express Backend
+       TypeScript + Vite                  TypeScript
+             |                                 |
+             | REST API / JSON                 |
+             +--------------->-----------------+
+                              |
+                              v
+                         PostgreSQL
+                              |
+                              v
+                        Persistent Data
+
+Backend Architecture and Frontend Architecture.
+Frontend
+React + TypeScript + Vite
+        ↓
+Axios REST API
+        ↓
+Backend
+Express + TypeScript
+        ↓
+JWT + RBAC + Validation
+        ↓
+PostgreSQL
