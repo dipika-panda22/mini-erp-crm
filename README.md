@@ -261,7 +261,7 @@ https://github.com/dipika-panda22/mini-erp-crm
 
 The GitHub repository contains the complete source code for the frontend, backend, database schema, documentation, and Postman API collection.
 
-## Postman API Collection
+## Postman API Documentation
 
 **Repository Path:**  
 `docs/Mini ERP CRM API.postman_collection.json`
