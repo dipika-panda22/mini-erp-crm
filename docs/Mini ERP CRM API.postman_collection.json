@@ -1,0 +1,519 @@
+{
+  "info": {
+    "_postman_id": "d0335f0e-cc28-4291-a5de-60dbeb6c95b4",
+    "name": "Mini ERP CRM API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57927784"
+  },
+  "item": [
+    {
+      "name": "BackendLogin_ERCRM",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"admin@example.com\",\r\n  \"password\": \"Admin@123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://mini-erp-crm-1sbb.onrender.com/api/auth/login",
+          "protocol": "https",
+          "host": [
+            "mini-erp-crm-1sbb",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Customers_ERPCRM",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkOTkxNTk5LTJlMGEtNGQyOC1iMmUzLTM3MDMwZmY0ODU2MCIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3ODg0MTc5MzYsImV4cCI6MTc4ODUwNDMzNn0.BUseFmAaGG5R5COaHp19ieStpreXJ89G7K9c9-DrlAc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://mini-erp-crm-1sbb.onrender.com/api/customers",
+          "protocol": "https",
+          "host": [
+            "mini-erp-crm-1sbb",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "customers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Customer",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkOTkxNTk5LTJlMGEtNGQyOC1iMmUzLTM3MDMwZmY0ODU2MCIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3ODg0MTc5MzYsImV4cCI6MTc4ODUwNDMzNn0.BUseFmAaGG5R5COaHp19ieStpreXJ89G7K9c9-DrlAc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Render Test Customer\",\r\n  \"mobile\": \"9876543210\",\r\n  \"email\": \"render.test@example.com\",\r\n  \"business_name\": \"Render Test Business\",\r\n  \"gst_number\": \"21ABCDE1234F1Z5\",\r\n  \"customer_type\": \"RETAIL\",\r\n  \"address\": \"Jeypore, Odisha\",\r\n  \"status\": \"ACTIVE\",\r\n  \"follow_up_date\": \"2026-09-10\",\r\n  \"notes\": \"Production deployment API test\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://mini-erp-crm-1sbb.onrender.com/api/customers",
+          "protocol": "https",
+          "host": [
+            "mini-erp-crm-1sbb",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "customers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Customer Details",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkOTkxNTk5LTJlMGEtNGQyOC1iMmUzLTM3MDMwZmY0ODU2MCIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3ODg0MTc5MzYsImV4cCI6MTc4ODUwNDMzNn0.BUseFmAaGG5R5COaHp19ieStpreXJ89G7K9c9-DrlAc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://mini-erp-crm-1sbb.onrender.com/api/customers/cb3bf49a-a00c-40a7-9c8f-2869a347a423",
+          "protocol": "https",
+          "host": [
+            "mini-erp-crm-1sbb",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "customers",
+            "cb3bf49a-a00c-40a7-9c8f-2869a347a423"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Customer",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkOTkxNTk5LTJlMGEtNGQyOC1iMmUzLTM3MDMwZmY0ODU2MCIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3ODg0MTc5MzYsImV4cCI6MTc4ODUwNDMzNn0.BUseFmAaGG5R5COaHp19ieStpreXJ89G7K9c9-DrlAc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Render Test Customer Updated\",\r\n  \"mobile\": \"9876543210\",\r\n  \"email\": \"render.test@example.com\",\r\n  \"business_name\": \"Render Test Business Updated\",\r\n  \"gst_number\": \"21ABCDE1234F1Z5\",\r\n  \"customer_type\": \"WHOLESALE\",\r\n  \"address\": \"Jeypore, Odisha\",\r\n  \"status\": \"ACTIVE\",\r\n  \"follow_up_date\": \"2026-09-15\",\r\n  \"notes\": \"Updated through production API\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://mini-erp-crm-1sbb.onrender.com/api/customers/cb3bf49a-a00c-40a7-9c8f-2869a347a423",
+          "protocol": "https",
+          "host": [
+            "mini-erp-crm-1sbb",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "customers",
+            "cb3bf49a-a00c-40a7-9c8f-2869a347a423"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Customer Follow-up",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkOTkxNTk5LTJlMGEtNGQyOC1iMmUzLTM3MDMwZmY0ODU2MCIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3ODg0MTc5MzYsImV4cCI6MTc4ODUwNDMzNn0.BUseFmAaGG5R5COaHp19ieStpreXJ89G7K9c9-DrlAc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"note\": \"Follow-up completed through production API\",\r\n  \"follow_up_date\": \"2026-09-20\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://mini-erp-crm-1sbb.onrender.com/api/customers/cb3bf49a-a00c-40a7-9c8f-2869a347a423/followups",
+          "protocol": "https",
+          "host": [
+            "mini-erp-crm-1sbb",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "customers",
+            "cb3bf49a-a00c-40a7-9c8f-2869a347a423",
+            "followups"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Products",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkOTkxNTk5LTJlMGEtNGQyOC1iMmUzLTM3MDMwZmY0ODU2MCIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3ODg0MTc5MzYsImV4cCI6MTc4ODUwNDMzNn0.BUseFmAaGG5R5COaHp19ieStpreXJ89G7K9c9-DrlAc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://mini-erp-crm-1sbb.onrender.com/api/products",
+          "protocol": "https",
+          "host": [
+            "mini-erp-crm-1sbb",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Product",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkOTkxNTk5LTJlMGEtNGQyOC1iMmUzLTM3MDMwZmY0ODU2MCIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3ODg0MTkyNjAsImV4cCI6MTc4ODUwNTY2MH0.2kwTrWZfCUpLpiLFRDf6PsQkouLR5qkHSOAkS9spA3o",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Render Test Product\",\r\n  \"sku\": \"RENDER-TEST-001\",\r\n  \"category\": \"General\",\r\n  \"unit_price\": 500,\r\n  \"current_stock\": 100,\r\n  \"minimum_stock\": 20,\r\n  \"warehouse_location\": \"Warehouse A\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://mini-erp-crm-1sbb.onrender.com/api/products",
+          "protocol": "https",
+          "host": [
+            "mini-erp-crm-1sbb",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Product",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkOTkxNTk5LTJlMGEtNGQyOC1iMmUzLTM3MDMwZmY0ODU2MCIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3ODg0MTkyNjAsImV4cCI6MTc4ODUwNTY2MH0.2kwTrWZfCUpLpiLFRDf6PsQkouLR5qkHSOAkS9spA3o",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Render Test Product Updated\",\r\n  \"sku\": \"RENDER-TEST-001\",\r\n  \"category\": \"General\",\r\n  \"unit_price\": 550,\r\n  \"current_stock\": 100,\r\n  \"minimum_stock\": 25,\r\n  \"warehouse_location\": \"Warehouse B\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://mini-erp-crm-1sbb.onrender.com/api/products/dffccc2d-074e-42c5-aaf3-6cc53ac2803f",
+          "protocol": "https",
+          "host": [
+            "mini-erp-crm-1sbb",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "products",
+            "dffccc2d-074e-42c5-aaf3-6cc53ac2803f"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Stock Movements",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkOTkxNTk5LTJlMGEtNGQyOC1iMmUzLTM3MDMwZmY0ODU2MCIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3ODg0MTkyNjAsImV4cCI6MTc4ODUwNTY2MH0.2kwTrWZfCUpLpiLFRDf6PsQkouLR5qkHSOAkS9spA3o",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://mini-erp-crm-1sbb.onrender.com/api/products/dffccc2d-074e-42c5-aaf3-6cc53ac2803f/stock-movements",
+          "protocol": "https",
+          "host": [
+            "mini-erp-crm-1sbb",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "products",
+            "dffccc2d-074e-42c5-aaf3-6cc53ac2803f",
+            "stock-movements"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Challans",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkOTkxNTk5LTJlMGEtNGQyOC1iMmUzLTM3MDMwZmY0ODU2MCIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3ODg0MTkyNjAsImV4cCI6MTc4ODUwNTY2MH0.2kwTrWZfCUpLpiLFRDf6PsQkouLR5qkHSOAkS9spA3o",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://mini-erp-crm-1sbb.onrender.com/api/challans",
+          "protocol": "https",
+          "host": [
+            "mini-erp-crm-1sbb",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "challans"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateChallans",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkOTkxNTk5LTJlMGEtNGQyOC1iMmUzLTM3MDMwZmY0ODU2MCIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3ODg0MTkyNjAsImV4cCI6MTc4ODUwNTY2MH0.2kwTrWZfCUpLpiLFRDf6PsQkouLR5qkHSOAkS9spA3o",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"customer_id\": \"cb3bf49a-a00c-40a7-9c8f-2869a347a423\",\r\n  \"items\": [\r\n    {\r\n      \"product_id\": \"dffccc2d-074e-42c5-aaf3-6cc53ac2803f\",\r\n      \"quantity\": 5\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://mini-erp-crm-1sbb.onrender.com/api/challans",
+          "protocol": "https",
+          "host": [
+            "mini-erp-crm-1sbb",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "challans"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Challan Details",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkOTkxNTk5LTJlMGEtNGQyOC1iMmUzLTM3MDMwZmY0ODU2MCIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3ODg0MTkyNjAsImV4cCI6MTc4ODUwNTY2MH0.2kwTrWZfCUpLpiLFRDf6PsQkouLR5qkHSOAkS9spA3o",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://mini-erp-crm-1sbb.onrender.com/api/challans/b4596c4c-b0ce-41bd-9818-ce96ea0fcb6f",
+          "protocol": "https",
+          "host": [
+            "mini-erp-crm-1sbb",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "challans",
+            "b4596c4c-b0ce-41bd-9818-ce96ea0fcb6f"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ConfirmChallans",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkOTkxNTk5LTJlMGEtNGQyOC1iMmUzLTM3MDMwZmY0ODU2MCIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3ODg0MTkyNjAsImV4cCI6MTc4ODUwNTY2MH0.2kwTrWZfCUpLpiLFRDf6PsQkouLR5qkHSOAkS9spA3o",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://mini-erp-crm-1sbb.onrender.com/api/challans/b4596c4c-b0ce-41bd-9818-ce96ea0fcb6f/confirm",
+          "protocol": "https",
+          "host": [
+            "mini-erp-crm-1sbb",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "challans",
+            "b4596c4c-b0ce-41bd-9818-ce96ea0fcb6f",
+            "confirm"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CancelChallan",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    }
+  ]
+}
